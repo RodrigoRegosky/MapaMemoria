@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Persona desaparecida",
+        "descripcion": "Estudiante de Paraná, desaparecida en 1976.",
+        "categoria": "Personas desaparecidas",
+        "u_map_options": {
+          "color": "Crimson",
+          "iconClass": "Circle"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.5300,
+          -31.7400
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Organismos de DDHH",
+        "descripcion": "Organismos de DDHH",
+          "categoria": "Organismos de DDHH",
+        "u_map_options": {
+          "color": "Green",
+          "iconClass": "Circle"
+        }
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.0200,
+          -31.4000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Espacios de memoria",
+        "descripcion": "Espacios de memoria",
+          "categoria": "Espacios de memoria",
+        "u_map_options": {
+          "color": "Blue",
+          "iconClass": "Circle"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.5100,
+          -33.0100
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Madres / CDD",
+        "descripcion": "Madres / CDD",
+          "categoria": "Madres / CDD",
+        "u_map_options": {
+          "color": "Gold",
+          "iconClass": "Circle"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.0200,
+          -32.8700
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nombre": "Laura Suárez",
+        "descripcion": "Obrera textil de Concepción del Uruguay, desaparecida en 1976.",
+          "categoria": "Personas desaparecidas",
+        "u_map_options": {
+          "color": "Crimson",
+          "iconClass": "Circle"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.2300,
+          -32.4800
+        ]
+      }
+    }
+  ]
+}
