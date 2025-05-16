@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Desaparecides Entrerrianes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .leaflet-popup-content {
+      white-space: pre-line;
+    }
+    .legend {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      font-size: 14px;
+      line-height: 1.5;
+      z-index: 1000;
+    }
+    .legend div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .legend span {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="legend">
+    <div><span style="background: crimson"></span> Personas desaparecidas</div>
+    <div><span style="background: green"></span> Organismos de DDHH</div>
+    <div><span style="background: blue"></span> Espacios de memoria</div>
+    <div><span style="background: gold"></span> Madres / CDD</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([-32.0, -59.0], 7);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const capas = {
+      "Personas desaparecidas": L.layerGroup().addTo(map),
+      "Organismos de DDHH": L.layerGroup().addTo(map),
+      "Espacios de memoria": L.layerGroup().addTo(map),
+      "Madres / CDD": L.layerGroup().addTo(map)
+    };
+
+    const coloresCategorias = {
+      "crimson": "Personas desaparecidas",
+      "green": "Organismos de DDHH",
+      "blue": "Espacios de memoria",
+      "gold": "Madres / CDD"
+    };
+
+    fetch('mapa_desaparecides_entrerrianes.geojson')
+      .then(response => response.json())
+      .then(data => {
+        data.features.forEach(feature => {
+          const lat = feature.geometry.coordinates[1];
+          const lng = feature.geometry.coordinates[0];
+          const color = feature.properties._umap_options?.color?.toLowerCase() || 'gray';
+          const categoria = coloresCategorias[color] || null;
+
+          const marker = L.circleMarker([lat, lng], {
+            radius: 6,
+            fillColor: color,
+            color: '#000',
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+          });
+
+          const name = feature.properties.name || "Sin nombre";
+          const desc = feature.properties.description || "Sin descripción";
+          marker.bindPopup(`<strong>${name}</strong><br>${desc}`);
+
+          if (categoria && capas[categoria]) {
+            marker.addTo(capas[categoria]);
+          } else {
+            marker.addTo(map);
+          }
+        });
+
+        L.control.layers(null, capas, { collapsed: false }).addTo(map);
+      })
+      .catch(error => console.error('Error cargando el GeoJSON:', error));
+  </script>
+</body>
+</html>
