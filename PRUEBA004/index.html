@@ -69,9 +69,9 @@
 
   <script>
     // 1. Inicializar el mapa
-    const map = L.map('map').setView([-32.0, -60.0], 7); // Ajustado centro en Entre Ríos
+    const map = L.map('map').setView([-32.0, -60.0], 7);
 
-    // 2. Fondo CartoDB Light (sin espacios en URL)
+    // 2. Fondo CartoDB Light
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',
@@ -86,7 +86,6 @@
       "Madres / CDD": L.layerGroup()
     };
 
-    // Añadir todas las capas al mapa (pero no visibles aún hasta que se agreguen marcadores)
     Object.values(capas).forEach(layer => layer.addTo(map));
 
     // 4. Iconos personalizados
@@ -131,7 +130,45 @@
       "gold": "Madres / CDD"
     };
 
-    // Coordenadas para ajustar la vista tras cargar
+    // 🔧 Función para mapear cualquier variante de color a clave válida
+    function getColorKey(color) {
+      if (!color) return 'gray';
+      const c = color.toLowerCase().trim();
+
+      // 🔴 Rojos: todos los posibles rojos
+      if (c === 'red' || 
+          c === 'crimson' || 
+          c === '#dc3545' || 
+          c.includes('red') || 
+          c === '#ff0000' || 
+          c === 'darkred' || 
+          c === 'tomato') {
+        return 'red';
+      }
+
+      // 🟢 Verdes
+      if (c === 'green' || c.includes('green') || c === '#28a745') {
+        return 'green';
+      }
+
+      // 🔵 Azules
+      if (c === 'blue' || c.includes('blue') || c === 'midnightblue') {
+        return 'blue';
+      }
+
+      // 🟡 Dorados / Amarillos
+      if (c === 'gold' || c.includes('gold') || 
+          c === 'yellow' || c.includes('yellow') || 
+          c === '#ffc107') {
+        return 'gold';
+      }
+
+      // Por defecto
+      console.warn('Color no reconocido:', color, '→ usando gris');
+      return 'gray';
+    }
+
+    // Coordenadas para ajustar la vista
     const bounds = [];
 
     // 5. Cargar GeoJSON
@@ -145,22 +182,20 @@
           const coords = feature.geometry?.coordinates;
           if (!coords || coords.length < 2) return;
 
-          const [lng, lat] = coords; // GeoJSON: [long, lat]
+          const [lng, lat] = coords;
           if (!lat || !lng) return;
 
-          // Guardar para ajustar vista después
           bounds.push([lat, lng]);
 
-          // Obtener color desde uMap u otra propiedad
+          // Obtener color y mapear
           const rawColor = feature.properties?._umap_options?.color || 'gray';
-          const color = rawColor.toLowerCase().trim().replace('#', '') === 'dc3545' ? 'red' : // rojo bootstrap
-                        rawColor.toLowerCase().includes('green') ? 'green' :
-                        rawColor.toLowerCase().includes('blue') ? 'blue' :
-                        rawColor.toLowerCase().includes('gold') || rawColor.toLowerCase().includes('yellow') ? 'gold' :
-                        'gray';
-
-          const category = colorToCategory[color] || "Personas desaparecidas"; // por defecto
+          const color = getColorKey(rawColor);
+          const category = colorToCategory[color] || "Personas desaparecidas";
           const icon = iconos[color] || iconos.gray;
+
+          if (!iconos[color]) {
+            console.warn(`Ícono no encontrado para color: ${color}`);
+          }
 
           // Propiedades del marcador
           const name = feature.properties?.name || "Sin nombre";
@@ -180,14 +215,13 @@
           }
           popupContent += `</div>`;
 
-          // Crear marcador
+          // Crear y agregar marcador
           const marker = L.marker([lat, lng], { icon }).bindPopup(popupContent);
 
-          // Añadir a capa correspondiente
           if (capas[category]) {
             marker.addTo(capas[category]);
           } else {
-            marker.addTo(map); // fallback
+            marker.addTo(map);
           }
         });
 
