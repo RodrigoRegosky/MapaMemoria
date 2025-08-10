@@ -1,0 +1,373 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.309692, -33.154726]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "CABRERA PORTEL, Luis Alberto",
+        "description": "“Huesito” CABRERA PORTEL nació el 26 de septiembre de 1948 en Gualeguay, Entre Ríos.\nLuis era obrero naval en Astilleros Acquamarina y militante de la Agrupación “Alessio” del gremio de los navales.\nMilitante de la Juventud Trabajadora Peronista (JTP) y del Bloque Sindical del Peronismo Auténtico.\nLuis fue secuestrado por la Triple A el 3 de febrero de 1976 en Calle 9 de Julio, Rincón de Milberg. Tigre, Buenos Aires, junto a Héctor Oscar Echeverría y Rosa María Casariego.\nAsesinado el 5 de febrero de 1976 en Muracca S/Nº a 10 cuadras de Ruta Provincial Nº 25. Cuartel V, Moreno. Buenos Aires junto a Héctor Oscar Echeverría y Rosa María Casariego. Tenía 27 años.\nSus restos fueron recuperados por su familia el 7 de febrero de 1976.",
+        "fecha": "Secuestrado: 3 de febrero de 1976",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.326515, -33.150034]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "DEL ROSSO FORMOSA, Domingo Raúl",
+        "description": "“Negro” Nació el 31 de julio de 1947 en Gualeguay, Entre Ríos. Domingo hizo el secundario en el Comercial de Santa Fe en tanto vivía con su familia en el barrio de Guadalupe. Ya por ese tiempo comenzó a militar en la Unión de Estudiantes Secundarios (UES). Estudiante de Ingeniería Química, pero dedicándose de lleno a la militancia, le quedó pendiente tan sólo una materia para recibirse. Estaba casado con su compañera de militancia Stela Maris Hildbrand, con quien tuvo un hijo al que llamaron Pablo. Cuadro de la Juventud Peronista (JP) y Montoneros era responsable de todo el territorio; manejaba los barrios Barranquitas, Escalante y San Lorenzo. Domingo fue asesinado el 10 de diciembre de 1977 en Rosario, Santa Fe. Tenía 30 años.",
+        "fecha": "Asesinado: 10 de diciembre de 1977",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.300079, -33.15184]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "FERNÁNDEZ OCAMPO, Darío Ceferino",
+        "description": "Nació el 01 de septiembre de 1940 en Gualeguay, Entre Ríos. Hijo de Bautista Fernández y Doña Micaela Campos. Desde muy joven comenzó a militar en el peronismo. Trabajó en el Municipio de Campana, donde llegó a ser Revisor de Cuentas de la Comisión Directiva del Sindicato de Trabajadores Municipales. Se casó con Nora Eleuteria Pereyra en esa localidad y formó una familia, teniendo dos hijos: Corina y Claudio. Ya en su madurez comenzó a trabajar en Dálmine Siderca. También participó de la vida gremial de ese ámbito. Pasando Darío a ejercer un rol más activo en este espacio, fue detenido-desaparecido el 27 de abril de 1976 en el trayecto entre su domicilio y su lugar de trabajo en Campana, Buenos Aires. Tenía 35 años.",
+        "fecha": "Detenido-desaparecido: 27 de abril de 1976",
+        "foto": "http://th.bing.com/th/id/R.3ac395f1c0c327a948f1c0241425bab7?rik=UktR2hZIHM9yTA&riu=http%3a%2f%2fbasededatos.parquedelamemoria.org.ar%2fmedia%2ffotos%2fFERNANDEZ_DARIO_CEFERINO_1.jpg&ehk=7Axk9N979BViztmkBTYZf%2bLEcZ%2bNrjZQn1nn8wGfJHw%3d&risl=&pid=ImgRaw&r=0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.318275, -33.15794]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "ARMELÍN TOMMASI, Juana María",
+        "description": "Detenida-Desaparecida el 23/2/78. Nació el 24 de junio de 1948. Militante del Partido Comunista Marxista Leninista (PCML). Juana y Camilo (su pareja) fueron detenidos el 23 de febrero de 1978 en su casa en calle Navarro 2.634 – Agronomía, provincia de Buenos Aires, por un grupo de personas armadas pertenecientes a la Policía Federal y al Ejército Argentino. En el operativo intervinieron un grupo de hasta 100 personas, camiones militares y soldados uniformados. El día del secuestro de sus padres, a Camilo de 5 años y Pía de 3, los llevaron a una comisaría y más tarde los derivaron al orfanato Instituto Pilar Borgez de Otamendi. La familia pudo posteriormente recuperar a los chicos. Juana fue vista por sobrevivientes en los Centros Clandestinos de Detención (CCD) El Banco y El Olimpo, que dependían operacionalmente del Primer Cuerpo de Ejército.",
+        "fecha": "Detenida-desaparecida: 23 de febrero de 1978",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.312782, -33.157006]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "ARRATIVEL RION, Mario Alberto",
+        "description": "Nació el 03 de octubre de 1962 en Gualeguay, Entre Ríos. Mario fue detenido-desaparecido el 22 de julio de 1977 en Tarija 244 · Villa Sastre, Temperley, Lomas de Zamora, Buenos Aires, junto a sus tíos Rosario Dominga Lasala Morales, José Ítalo Rion y su primo Juan Domingo. Sobrevivientes los vieron en el Centro Clandestino de Detención, Tortura y Exterminio (CCDTyE) El Vesubio. Tenía 14 años.",
+        "fecha": "Detenido-desaparecido: 22 de julio de 1977",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.323425, -33.158459]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "CAMILIÓN MORISSE, Jorge Fortunato",
+        "description": "Julio, el Chacho rubio, \"Viejo” CAMILIÓN MORISSE, nació el 11 de octubre de 1943 en Gualeguay, Entre Ríos. Casado, dos hijos Cecilia y Mario. Ex dirigente gremial de municipales en Córdoba. Dirigente Gremial Uncba, Poder Obrero - Organización Comunista Poder Obrero (OCPO). Trabajaba como profesor de música y estudiaba abogacía. Militante de la Organización Comunista Poder Obrero (OCPO). Jorge fue asesinado el 09 de septiembre de 1977 en Gluk 3.380, Villa Tessei, Morón, Buenos Aires. Tenía 33 años. Cuando llegan, Chacho estaba solo con el bebé. Lo cuida, lo arropa y lo cubre con un colchón. El operativo estuvo a cargo de la base aérea de Morón y contó con la colaboración de la Comisaría de Villa Tesei. Numerosos camiones, autos intervienen según declaraciones de los vecinos, muchos hombres, de civil y de uniforme rodean la casita, con armas cortas y largas y atacan desde todos lados. Después de terminado el ataque, entran a la casita, sacan al bebé y se lo entregan a la familia que habitaba en la esquina de la manzana de enfrente. Esa misma tarde, realizan otro operativo similar, con autos, camiones, armas largas y se llevan al bebé. Mario, es llevado al Hospital Regional de Morón y luego a la casa cuna de La Plata, ingresado como NN. A la semana siguiente, su abuela materna, consigue recuperarlo con la colaboración de la encargada del Servicio Social del Hospital.",
+        "fecha": "Asesinado: 9 de septiembre de 1977",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.325829, -33.154999]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "CERRUDO ZANETTI, Carlos Florentino",
+        "description": "“Negro/Coco” CERRUDO ZANETTI, nació el 05 de octubre de 1948 en Gualeguay. Chofer en Servicios Generales, División Transporte Terrestre, de Presidencia de la Nación. Carlos fue detenido-desaparecido el 9 de noviembre de 1976 de su domicilio en calle Sarmiento 2.877 1º A, Balvanera, Capital Federal, Buenos Aires. Sobrevivientes lo vieron en el Centro Clandestino de Detención, Tortura y Exterminio (CCDTyE) de la Escuela Superior de Mecánica de la Armada “ESMA”. Tenía 28 años. Caso incluido en causa judicial en la que se investigaron, probaron y condenaron delitos de lesa humanidad.",
+        "fecha": "Detenido-desaparecido: 9 de noviembre de 1976",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.302397, -33.151354]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "CORREA VIGLIANO, Jorge Humberto",
+        "description": "Nació el 5 de octubre de 1953 en Gualeguay, Entre Ríos. Militante de Montoneros. Jorge fue herido por un Grupo de Tareas de la Triple A (Alianza Anticomunista Argentina), en un procedimiento callejero el 15 de enero de 1975 en Zeppelin y Marconi, a 50 m entrada planta industrial Borgward Argentina S.A., Isidro Casanova, La Matanza, Buenos Aires. Falleció el 16 de enero de 1975 en el Instituto de Cirugía de Haedo, Buenos Aires. Denuncia realizada en 2000. Tenía 21 años.",
+        "fecha": "Falleció: 16 de enero de 1975",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.326344, -33.152455]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "DA-DALT CARBONI, Néstor Enrique",
+        "description": "“Cachito” Nació el 15 de octubre de 1951 en Gualeguay donde cursó sus estudios primarios y secundarios, estos últimos en la Escuela de Comercio. Continuó sus estudios universitarios en Santa Fe. Dos hijos. Militante del Partido Comunista Marxista Leninista (PCML). Néstor fue detenido-desaparecido el 22 de julio de 1978 en General Roca, Río Negro. Tenía 26 años.",
+        "fecha": "Detenido-desaparecido: 22 de julio de 1978",
+        "foto": "http://th.bing.com/th/id/OIP.tJ4dZTrU4gC2tG-8uljvFwHaFg?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.320679, -33.154775]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "red"
+        },
+        "name": "FURRER HURVITZ, Néstor Valentín",
+        "description": "“Viscacha” nació el 02 de diciembre de 1950 en Gualeguay, Entre Ríos. Néstor estaba casado con Lucía Julia Perrier con quién tenía dos hijas – Alejandra Victoria y Natalia Silvia. Era estudiante de Ciencias Económicas. Militante del Partido Comunista Marxista Leninista (PCML). Néstor y Lucía fueron detenidos-desaparecidos el 2 de febrero de 1978 en Necochea, Buenos Aires, junto a sus hijas y trasladados a Mar del Plata. Alejandra Victoria y Natalia Silvia fueron abandonadas, por los represores, en una zona costera próxima a la playa Peralta Ramos; la noche del 4 de febrero de 1978, donde fueron halladas, por una patrulla de la Base Naval, siendo finalmente restituidas a sus respectivos abuelos. Sobrevivientes vieron a Néstor y Lucía en el Centro Clandestino de Detención (CCD) Base Naval Mar del Plata y hasta el 29 de julio de 1978 en el Centro Clandestino de Detención (CCD) La Cacha. Tenía 27 años.",
+        "fecha": "Detenido-desaparecido: 2 de febrero de 1978",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.52484, -31.733615]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "RODHER: Red de organismos de Derechos Humanos de Entre Ríos",
+        "description": "Red que nuclea todas las organizaciones de Derechos Humanos de la Provincia de Entre Ríos.",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.zMR0mQ1wOu-rogwuaWsNdwHaBo?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.526911, -31.732876]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Registro Único de la Verdad",
+        "description": "Organismo provincial dependiente del Ministerio de Gobierno y Justicia de la Provincia de Entre Ríos, fue creado con la finalidad de concentrar, sistematizar y garantizar el acceso a la información, antecedentes y documentación referida al accionar del Terrorismo de Estado en Entre Ríos o contra entrerrianos hasta el 10 de diciembre de 1983.\n\nDirección: Andrés Pazos 210 - Planta Alta, Paraná\nContacto: 0343 423-4310\nCorreo electrónico: registrounicodelaverdad@entrerios.gov.ar\nFacebook: Registro único de la Verdad",
+        "fecha": "Creado en 2017",
+        "foto": "http://th.bing.com/th/id/OIP.zMR0mQ1wOu-rogwuaWsNdwHaBo?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.013748, -31.847524]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Memoria Colectiva",
+        "description": "Forma parte de RODHER.\n\nFacebook: Memoria ColectivaVguay",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.523483, -33.004489]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Madres de Plaza de Mayo Gualeguaychú",
+        "description": "Forma parte de RODHER.\n\nFacebook: Madres De Plaza De Mayo Gualeguaychú",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th?id=OIP.3UeOQl6IVbv6y6cXvUDhdwHaFj&w=80&h=80&c=12&rs=1&qlt=90&o=6&pid=13.1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.312611, -33.145888]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Asamblea Permanente por los Derechos Humanos (APDH)",
+        "description": "Forma parte de RODHER.\n\nFacebook: Asamblea Permanente Por Los Ddhh Gualeguay\nInstagram: apdh.gualeguay",
+        "fecha": "Activo",
+        "foto": "http://castexonline.com/wp-content/uploads/2020/06/apdh.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.525098, -31.736051]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Asociación de Ex presos “La solapa”",
+        "description": "Forma parte de RODHER.\n\nFacebook: La Solapa - Paraná\nInstagram: lasolapaentrerios\nCorreo electrónico: lasolapa2@gmail.com\nTeléfono: 343-512-4179",
+        "fecha": "Activo",
+        "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZOtJJbxWjrUZ178iM4J1ZUPUfPPDtvGW6MxsfBuECda_4dJVHSbUzNKcpWQyFHnEpas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.527458, -31.740066]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Asociación de Familiares y Amigos de Desaparecidos de Entre Ríos (AFADER)",
+        "description": "Es la primera asociación de Derechos Humanos creada posdictadura en nuestra provincia. Fundada en 1994 en la ciudad de Paraná. Forma parte de RODHER.\n\nFacebook: Afader Asoc Fliares Desaparecidos ER",
+        "fecha": "Fundación: 1994",
+        "foto": "http://2.bp.blogspot.com/_LYfKGPPNLzI/RurabedYbpI/AAAAAAAAADI/Vo6VRr5fN_k/s1600/Logo+afader2.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.011761, -31.367855]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Asociación de Familiares y Amigos de Detenidos Desaparecidos y ex Presos Políticos de Concordia",
+        "description": "Forma parte de RODHER.",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.139219, -32.224855]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Comisión Permanente por los Derechos Humanos del Departamento Colón",
+        "description": "Forma parte de RODHER.\n\nFacebook: Comisión Permanente de Derechos Humanos del Departamento Colón\nCorreo electrónico: copedehu@gmail.com\nTeléfono: 3447 15-64-6693",
+        "fecha": "Activo",
+        "foto": "http://4.bp.blogspot.com/-dBt7r9pWibg/Tq6fzYyBz3I/AAAAAAAAAQ4/bM-2D-COUHk/s1600/HumanRightsLogo_CO.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.255348, -32.479646]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Comisión por Memoria, Verdad y Justicia",
+        "description": "Forma parte de RODHER.\n\nFacebook: Comisión por Memoria, Verdad y Justicia de Concepción del Uruguay",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.AvwNpKEOXHWXKVbFszKC4AHaHY?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.231058, -32.485945]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Familiares de Detenidos Desaparecidos",
+        "description": "Forma parte de RODHER.",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.529904, -31.733277]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Hijos e Hijas por la Identidad, la Justicia contra el Olvido y el Silencio (H.I.J.O.S) - Regional Paraná",
+        "description": "Forma parte de RODHER.\n\nCorreo electrónico: hijos_parana@yahoo.com.ar\nInstagram: hijosparana\nFacebook: HIJOS Paraná",
+        "fecha": "Activo",
+        "foto": "http://th.bing.com/th/id/OIP.opWz7HbZ3-X3gPTHdavQtAHaHa?pid=ImgDet&rs=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.52954, -31.735577]
+      },
+      "properties": {
+        "_umap_options": {
+          "color": "green"
+        },
+        "name": "Liga Argentina por los Derechos del Hombre - Filial Entre Ríos",
+        "description": "Asociación constituida en 2022. Silvia Garnier, docente y tía de la nieta recuperada 126, es la responsable de la filial entrerriana.\nForma parte de RODHER.",
+        "fecha": "Fundación: 2022",
+        "foto": "http://th.bing.com/th/id/OIP.My3ra059iD-Ez-HtMqR7EwHaHZ?pid=ImgDet&rs=1"
+      }
+    }
+  ]
+}
