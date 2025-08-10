@@ -15,8 +15,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -60.5300,
-          -31.7400
+          -60.53,
+          -31.74
         ]
       }
     },
@@ -25,18 +25,17 @@
       "properties": {
         "nombre": "Organismos de DDHH",
         "descripcion": "Organismos de DDHH",
-          "categoria": "Organismos de DDHH",
+        "categoria": "Organismos de DDHH",
         "u_map_options": {
           "color": "Green",
           "iconClass": "Circle"
         }
-        
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.0200,
-          -31.4000
+          -58.02,
+          -31.4
         ]
       }
     },
@@ -45,7 +44,7 @@
       "properties": {
         "nombre": "Espacios de memoria",
         "descripcion": "Espacios de memoria",
-          "categoria": "Espacios de memoria",
+        "categoria": "Espacios de memoria",
         "u_map_options": {
           "color": "Blue",
           "iconClass": "Circle"
@@ -54,8 +53,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.5100,
-          -33.0100
+          -58.51,
+          -33.01
         ]
       }
     },
@@ -64,7 +63,7 @@
       "properties": {
         "nombre": "Madres / CDD",
         "descripcion": "Madres / CDD",
-          "categoria": "Madres / CDD",
+        "categoria": "Madres / CDD",
         "u_map_options": {
           "color": "Gold",
           "iconClass": "Circle"
@@ -73,8 +72,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -59.0200,
-          -32.8700
+          -59.02,
+          -32.87
         ]
       }
     },
@@ -83,7 +82,7 @@
       "properties": {
         "nombre": "Laura Suárez",
         "descripcion": "Obrera textil de Concepción del Uruguay, desaparecida en 1976.",
-          "categoria": "Personas desaparecidas",
+        "categoria": "Personas desaparecidas",
         "u_map_options": {
           "color": "Crimson",
           "iconClass": "Circle"
@@ -92,8 +91,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.2300,
-          -32.4800
+          -58.23,
+          -32.48
         ]
       }
     }

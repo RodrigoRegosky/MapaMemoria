@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Desaparecides Entrerrianes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .leaflet-popup-content {
+      white-space: pre-line;
+    }
+    .legend {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      font-size: 14px;
+      line-height: 1.5;
+      z-index: 1000;
+    }
+    .legend div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .legend img {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="legend">
+    <div><img src="huella_roja.png"> Personas desaparecidas</div>
+    <div><img src="huella_verde.png"> Organismos de DDHH</div>
+    <div><img src="huella_azul.png"> Espacios de memoria</div>
+    <div><img src="huella_dorada.png"> Madres / CDD</div>
+  </div>
+
+  <!-- JS de Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // 1️⃣ Crear el mapa centrado en Entre Ríos
+    const map = L.map('map').setView([-32.0, -59.0], 7);
+
+    // 2️⃣ Fondo Carto Light (limpio, sin iconos de POIs)
+    L.tileLayer('https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> &copy; <a href="https://www.carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // 3️⃣ Crear capas por categoría
+    const capas = {
+      "Personas desaparecidas": L.layerGroup().addTo(map),
+      "Organismos de DDHH": L.layerGroup().addTo(map),
+      "Espacios de memoria": L.layerGroup().addTo(map),
+      "Madres / CDD": L.layerGroup().addTo(map)
+    };
+
+    // 4️⃣ Definir iconos personalizados (asegúrate de tener estos archivos .png en la misma carpeta)
+    const iconos = {
+      "crimson": L.icon({
+        iconUrl: 'huella_roja.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      "green": L.icon({
+        iconUrl: 'huella_verde.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      "blue": L.icon({
+        iconUrl: 'huella_azul.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      "gold": L.icon({
+        iconUrl: 'huella_dorada.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      })
+    };
+
+    // 5️⃣ Relacionar color del GeoJSON con nombre de la capa
+    const coloresCategorias = {
+      "crimson": "Personas desaparecidas",
+      "green": "Organismos de DDHH",
+      "blue": "Espacios de memoria",
+      "gold": "Madres / CDD"
+    };
+
+    // 6️⃣ Cargar el GeoJSON
+    fetch('mapa_desaparecides_entrerrianes.geojson')
+      .then(response => response.json())
+      .then(data => {
+        data.features.forEach(feature => {
+          const lat = feature.geometry.coordinates[1];
+          const lng = feature.geometry.coordinates[0];
+          const color = feature.properties._umap_options?.color?.toLowerCase() || 'gray';
+          const categoria = coloresCategorias[color] || null;
+
+          // 📌 Usar el icono según el color, o un marcador por defecto si no coincide
+          const icono = iconos[color] || L.icon({
+            iconUrl: 'huella_gris.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+          });
+
+          // Crear marcador con icono personalizado
+          const marker = L.marker([lat, lng], { icon: icono });
+
+          // Datos del popup
+          const name = feature.properties.name || "Sin nombre";
+          const desc = feature.properties.description || "Sin descripción";
+          const fecha = feature.properties.fecha || "Fecha desconocida";
+          const foto = feature.properties.foto || null;
+
+          let popupHTML = `
+            <div style="max-width:250px">
+              <h3 style="margin:0;color:${color}">${name}</h3>
+              <p>${desc}</p>
+              <p><strong>Fecha:</strong> ${fecha}</p>
+          `;
+          if (foto) {
+            popupHTML += `<img src="${foto}" style="width:100%;margin-top:5px;border-radius:5px;">`;
+          }
+          popupHTML += `</div>`;
+
+          marker.bindPopup(popupHTML);
+
+          // Añadir a la capa correspondiente
+          if (categoria && capas[categoria]) {
+            marker.addTo(capas[categoria]);
+          } else {
+            marker.addTo(map);
+          }
+        });
+
+        // Control de capas
+        L.control.layers(null, capas, { collapsed: false }).addTo(map);
+      })
+      .catch(error => console.error('Error cargando el GeoJSON:', error));
+  </script>
+</body>
+</html>
