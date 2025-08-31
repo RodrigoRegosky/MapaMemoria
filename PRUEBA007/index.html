@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa de Desaparecides Entrerrianes</title>
+
+  <!-- CSS de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .leaflet-popup-content {
+      white-space: pre-line;
+      font-family: Arial, sans-serif;
+    }
+    .legend {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      font-size: 14px;
+      z-index: 1000;
+      max-width: 220px;
+    }
+    .legend h4 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    .legend div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .legend img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    .legend p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="legend">
+    <h4>Leyenda</h4>
+    <div><img src="huella_roja.png" alt="Huella roja"> <p>Personas desaparecidas</p></div>
+    <div><img src="huella_verde.png" alt="Huella verde"> <p>Organismos de DDHH</p></div>
+    <div><img src="huella_azul.png" alt="Huella azul"> <p>Espacios de memoria</p></div>
+    <div><img src="huella_dorada.png" alt="Huella dorada"> <p>Madres / CDD</p></div>
+  </div>
+
+  <!-- JS de Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // 🔧 ARREGLO IMPRESCINDIBLE: Leaflet no encuentra los íconos por defecto
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    });
+
+    // 1. Inicializar el mapa
+    const map = L.map('map').setView([-32.0, -60.0], 7);
+
+    // 2. Fondo: CartoDB Light
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 18
+    }).addTo(map);
+
+    // 3. Capas
+    const capas = {
+      "Personas desaparecidas": L.layerGroup(),
+      "Organismos de DDHH": L.layerGroup(),
+      "Espacios de memoria": L.layerGroup(),
+      "Madres / CDD": L.layerGroup()
+    };
+
+    Object.values(capas).forEach(layer => layer.addTo(map));
+
+    // 4. Iconos personalizados
+    const iconos = {
+      red: L.icon({
+        iconUrl: 'huella_roja.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      green: L.icon({
+        iconUrl: 'huella_verde.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      blue: L.icon({
+        iconUrl: 'huella_azul.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      gold: L.icon({
+        iconUrl: 'huella_dorada.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      }),
+      gray: L.icon({
+        iconUrl: 'huella_gris.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      })
+    };
+
+    // Mapeo de categoría a ícono
+    const categoriaAIcono = {
+      "Personas desaparecidas": iconos.red,
+      "Organismos de DDHH": iconos.green,
+      "Espacios de memoria": iconos.blue,
+      "Madres / CDD": iconos.gold
+    };
+
+    // Para ajustar la vista
+    const bounds = [];
+
+    // 5. Cargar GeoJSON
+    fetch('datos-mapa.geojson')
+      .then(response => {
+        if (!response.ok) throw new Error('No se pudo cargar el archivo GeoJSON');
+        return response.json();
+      })
+      .then(data => {
+        data.features.forEach(feature => {
+          const coords = feature.geometry?.coordinates;
+          if (!coords || coords.length < 2) return;
+
+          const [lng, lat] = coords;
+          bounds.push([lat, lng]);
+
+          const categoria = feature.properties?.categoria;
+          const name = feature.properties?.name || "Sin nombre";
+          const desc = feature.properties?.description || "Sin descripción";
+          const fecha = feature.properties?.fecha || "Fecha desconocida";
+          const foto = feature.properties?.foto || null;
+
+          // Asignar ícono según categoría
+          const icon = categoriaAIcono[categoria] || iconos.gray;
+
+          // Popup
+          let popupContent = `
+            <div style="max-width: 280px; font-family: Arial, sans-serif;">
+              <h3 style="margin: 0 0 8px 0; color: ${
+                categoria === 'Personas desaparecidas' ? 'crimson' :
+                categoria === 'Organismos de DDHH' ? 'green' :
+                categoria === 'Espacios de memoria' ? 'blue' :
+                categoria === 'Madres / CDD' ? 'gold' : '#666'
+              };">${name}</h3>
+              <p style="margin: 0 0 8px 0;">${desc}</p>
+              <p style="margin: 0 0 8px 0;"><strong>Fecha:</strong> ${fecha}</p>`;
+          if (foto) {
+            popupContent += `<img src="${foto}" alt="Foto de ${name}" style="width:100%; height:auto; margin:8px 0; border-radius:6px;" />`;
+          }
+          popupContent += `</div>`;
+
+          // Crear y agregar marcador
+          const marker = L.marker([lat, lng], { icon }).bindPopup(popupContent);
+
+          if (capas[categoria]) {
+            marker.addTo(capas[categoria]);
+          } else {
+            marker.addTo(map);
+          }
+        });
+
+        // Ajustar vista
+        if (bounds.length > 0) {
+          map.fitBounds(bounds, { padding: [50, 50] });
+        }
+
+        // Control de capas
+        L.control.layers(null, capas, {
+          collapsed: false,
+          position: 'topleft'
+        }).addTo(map);
+
+      })
+      .catch(error => {
+        console.error('Error al cargar el GeoJSON:', error);
+        alert('No se pudo cargar el mapa. Verifica que el archivo datos-mapa-geojson.geojson esté en la carpeta correcta.');
+      });
+  </script>
+</body>
+</html>
