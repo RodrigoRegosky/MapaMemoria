@@ -142,24 +142,29 @@
     const bounds = [];
 
     // 5. Cargar GeoJSON
-    fetch('datos-mapa.geojson')
+    fetch('datos_200.geojson')
       .then(response => {
         if (!response.ok) throw new Error('No se pudo cargar el archivo GeoJSON');
         return response.json();
       })
       .then(data => {
+        if (!data.features || !Array.isArray(data.features)) {
+          throw new Error('El archivo GeoJSON no tiene la estructura esperada');
+        }
+
         data.features.forEach(feature => {
           const coords = feature.geometry?.coordinates;
           if (!coords || coords.length < 2) return;
 
           const [lng, lat] = coords;
+          if (isNaN(lat) || isNaN(lng)) return;
+
           bounds.push([lat, lng]);
 
           const categoria = feature.properties?.categoria;
           const name = feature.properties?.name || "Sin nombre";
           const desc = feature.properties?.description || "Sin descripción";
           const fecha = feature.properties?.fecha || "Fecha desconocida";
-          const foto = feature.properties?.foto || null;
 
           // Asignar ícono según categoría
           const icon = categoriaAIcono[categoria] || iconos.gray;
@@ -174,11 +179,8 @@
                 categoria === 'Madres / CDD' ? 'gold' : '#666'
               };">${name}</h3>
               <p style="margin: 0 0 8px 0;">${desc}</p>
-              <p style="margin: 0 0 8px 0;"><strong>Fecha:</strong> ${fecha}</p>`;
-          if (foto) {
-            popupContent += `<img src="${foto}" alt="Foto de ${name}" style="width:100%; height:auto; margin:8px 0; border-radius:6px;" />`;
-          }
-          popupContent += `</div>`;
+              <p style="margin: 0 0 8px 0;"><strong>Fecha:</strong> ${fecha}</p>
+            </div>`;
 
           // Crear y agregar marcador
           const marker = L.marker([lat, lng], { icon }).bindPopup(popupContent);
@@ -204,7 +206,7 @@
       })
       .catch(error => {
         console.error('Error al cargar el GeoJSON:', error);
-        alert('No se pudo cargar el mapa. Verifica que el archivo datos-mapa-geojson.geojson esté en la carpeta correcta.');
+        alert('No se pudo cargar el mapa. Verifica que el archivo datos_mapa_Nuevo260925.geojson esté en la carpeta correcta.');
       });
   </script>
 </body>
