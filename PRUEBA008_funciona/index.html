@@ -135,7 +135,7 @@
     const bounds = [];
 
     // 5. Cargar GeoJSON
-    fetch('datos_Nuevo_Corr.geojson')
+    fetch('datos.geojson')
       .then(response => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return response.json();
